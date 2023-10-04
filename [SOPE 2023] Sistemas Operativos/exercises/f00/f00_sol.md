@@ -2,25 +2,37 @@
 
 1. What directory are you in after executing each of the following commands? Check your
 guesses by running the command pwd.
+
+```
 $ cd ~
 $ cd
-R: We are at the user folder 
-====================================================================================
+```
+
+**Response:**
+
+ We are at the user folder 
+
+=====================================================
 
 2. Use the mkdir command to create the following subtree in your current directory:
+```
 dir1
 |-- dir2
 | |-- dir4
 | | |-- dir6
 | |-- dir5
 |-- dir3
-R: It plots the dir structure (Mac alternative: find dir1 or brew install tree)
-====================================================================================
+```
+**Response:**
 
+ It plots the dir structure (Mac alternative: find dir1 or brew install tree)
+
+=====================================================
 
 
 3. Starting at the current directory, in what directory would you end up after running the
 following commands?
+```
 $ tree dir1
 dir1
 |-- dir2
@@ -29,11 +41,17 @@ dir1
 | |-- dir5
 |-- dir3
 $ cd dir1/dir2/dir4/dir6/../..
-R: We ended up in dir2
-====================================================================================
+````
+
+**Response:**
+
+We ended up in dir2
+
+=====================================================
 
 4. Use the touch command to create empty files with the names as below within the
 subtree you created.
+```
 dir1
 |-- dir2
 | |-- dir4
@@ -45,10 +63,17 @@ dir1
 |-- f3a.txt
 |-- g56.doc
 |-- g3x.pdf
-R: we see all the folder and file hierarchy
-====================================================================================
+````
+
+**Response:**
+
+We see all the folder and file hierarchy
+
+=====================================================
+
 
 5. What is printed by the last two commands in this sequence?
+```
 $ tree dir1
 dir1
 |-- dir2
@@ -61,11 +86,17 @@ dir1
 |-- f3a.txt
 |-- g56.doc
 |-- g3x.pdf
+
 $ find dir1/dir2 -name "[fg][35][4-7a-z].txt" -print (none found)
 $ find dir1/dir3 -name "[fg][35][4-7a-z].txt" -print (print files name found)
-R: It prints the files found under the regex expression, firt letter f or g, second 3 or 5, range 4-7, a-z
+````
 
-More details:
+**Response:**
+
+It prints the files found under the regex expression, firt letter f or g, second 3 or 5, range 4-7, a-z
+
+**More details:**
+
 The command uses the find utility to search for files within a specified directory hierarchy based on certain criteria. Let's break down the command:
 
 find: This is the command itself, used to search for files and directories.
@@ -85,10 +116,13 @@ dir1/dir3: This is the starting directory or path from which the search will beg
 -print: This part of the command specifies that the matching file names should be printed to the standard output (usually the terminal).
 
 In summary, this find command searches for files within the "dir1/dir3" directory and its subdirectories that meet the specified naming pattern. The pattern looks for files with names that start with either 'f' or 'g', followed by either '3' or '5', followed by any digit between '4' and '7' or any lowercase letter between 'a' and 'z', and ending with '.txt'. When it finds such files, it prints their paths to the terminal.
-====================================================================================
+
+=====================================================
 
 6. What is the structure of the subtree with root at dir1 after running the last command
 in this sequence?
+
+```
 $ tree dir1
 dir1
 |-- dir2
@@ -101,53 +135,87 @@ dir1
 |-- f3a.txt
 |-- g56.doc
 |-- g3x.pdf
+
 $ rm -rf dir1/dir2
-R: Removed folder dir2 and all inside files (-f (force without confirmation) -r (attempt remove the dir hierarchy)  ) 
+```
+
+**Response:** 
+
+Removed folder dir2 and all inside files (-f (force without confirmation) -r (attempt remove the dir hierarchy)  ) 
+```
 (base) HSO:ficha_00 hso$ find dir1
 dir1
 dir1/dir3
 dir1/dir3/g56.txt
 dir1/dir3/f3a.txt
 dir1/dir3/g3x.txt
-====================================================================================
+```
+===================================================
 
 7. Assume that at directory dir3 you have the following scenario. Write the permissions
 of the 3 files in octal, indicate the owners of the files, their creation dates and size in bytes.
+```
 $ ls
+
 f3a.txt g3x.pdf j52.docx
+
 $ ls -l
+
 total 28712
 -rw-r--r-- 1 lblopes staff 1412 Dec 29 15:43 f3a.txt
 -rw-r--r--@ 1 lblopes staff 13923695 Dec 29 15:44 g3x.pdf
 -rw-r--r--@ 1 lblopes staff 13793 Dec 29 15:47 j52.docx
-R: ls -n (show permission numerically, turns on -l auto)
+
+``
+**Response:**
+
+ ls -n (show permission numerically, turns on -l auto)
+``` 
 (base) HSO:dir3 hso$ ls -n
 total 0
 -rw-r--r--  1 501  80  0 Sep 13 10:52 f3a.txt
 -rw-r--r--  1 501  80  0 Sep 13 10:53 g3x.txt
 -rw-r--r--  1 501  80  0 Sep 13 10:53 g56.txt
-====================================================================================
+````
+
+===================================================
 
 8. What permissions have “user/owner”, “group” and “others” over the file doit after you execute
 each of the following commands?
+
+```
 $ chmod 755 doit
 $ chmod u-wx doit
 $ chmod go-rx doit
 $ chmod 644 doit
-R: Check. https://linuxize.com/post/understanding-linux-file-permissions/
+
+```
+
+**Response:**
+
+ Check. https://linuxize.com/post/understanding-linux-file-permissions/
+
+``` 
 ll doit
 -rw-r--r--  1 hso  admin  0 Sep 13 11:46 doit
+
 chmod 755 doit (user: all, group:  execute, read, others: execute)
 -rwxr-xr-x  1 hso  admin  0 Sep 13 11:46 doit
+
+
 chmod u-wx doit (user: remove write and execute)
 -r--r-xr-x  1 hso  admin  0 Sep 13 11:46 doit
+
 chmod go-rx doit (group: remove read execute, and other also)
 -r--------  1 hso  admin  0 Sep 13 11:46 doit
+
 chmod 644 doit
 -rw-r--r--  1 hso  admin  0 Sep 13 11:46 doit
-====================================================================================
+
+===================================================
 
 9. What is printed by the last two commands in this sequence?
+```
 $ cat > trees.txt
 pine:253:221:1.2
 oak:144:123:0.9
@@ -155,25 +223,38 @@ birch:92:83:1.6
 yew:65:63:4.3
 alder:12:5:9.6
 ^D
+
 $ cat trees.txt | cut -d ’:’ -f 1,4
 $ cat trees.txt | cut -d ’:’ -f 1,4 | sort
-R: (cut -d (delimiter) :, -f (limit speficic fields 1, 4) ) 
+````
+
+**Response:** 
+
+(cut -d (delimiter) :, -f (limit speficic fields 1, 4) ) 
+
+```
 (base) HSO:ficha_00 hso$ cat trees.txt | cut -d ':' -f 1,4 
 pine:1.2
 oak:0.9
 birch:1.6
 yew:4.3
 alder:9.6
+```
 
+```
 (base) HSO:ficha_00 hso$ cat trees.txt | cut -d ':' -f 1,4 | sort
 alder:9.6
 birch:1.6
 oak:0.9
 pine:1.2
 yew:4.3
-R: print file content, cut by delimiter : , select column 1 and 4, and sort
+```
 
-More details:
+**Response:** 
+
+print file content, cut by delimiter : , select column 1 and 4, and sort
+
+**More details:**
 The command processes the contents of a file named "trees.txt." Let's break down the command step by step:
 
 cat trees.txt: This part of the command uses the cat command to display the contents of the "trees.txt" file in the terminal. cat is used to concatenate and display file contents.
@@ -187,11 +268,13 @@ cut -d ':' -f 1,4: This part of the command uses the cut command to extract spec
 sort: After the cut command extracts the specified fields, the resulting lines are passed to the sort command. The sort command is used to sort lines of text alphabetically by default. In this case, it sorts the lines based on the values in the selected fields from the previous step.
 
 So, in summary, the command reads the contents of the "trees.txt" file, extracts the first and fourth fields from each line (assuming fields are separated by colons), and then sorts the lines based on the values in these fields. The final sorted output is displayed in the terminal.
-====================================================================================
+
+==================================================
 
 
 10. Consider the following file with a quote written in a single line (no newlines). What
 is the output of the final three commands in this sequence? Explain why.
+```
 $ cat > q1.txt
 Three Rings for the Elven-kings under the sky, -->
 Seven for the dwarf-lords in their halls of stone, -->
@@ -202,12 +285,21 @@ One Ring to rule them all, One Ring to find them, -->
 One Ring to bring them all and in the darkness bind them -->
 In the Land of Mordor where the Shadows lie.
 ^D
+
 $ cat q1.txt | sed ’s/Ring/Sword/g’ > q2.txt
 $ cat q2.txt | grep -v Mordor (select lines dont match Mordor. off course none, no new lines)
-$ wc -l q2.txt          // count lines (word count (wc) - l (lines))
-R:  Replaced Ring by Sword,
+````
 
-More details:
+```
+$ wc -l q2.txt          // count lines (word count (wc) lines
+```
+
+**Response:**
+
+Replaced Ring by Sword,
+
+**More details:**
+
 The command performs a text substitution operation using the sed (stream editor) utility and then redirects the modified text to a new file. Let's break down the command step by step:
 
 cat q1.txt: This part of the command uses the cat command to display the contents of the "q1.txt" file in the terminal. The cat command is typically used to concatenate and display the contents of files.
@@ -225,24 +317,37 @@ g: This stands for "global," and it's a flag that tells sed to perform the subst
 > q2.txt: The > symbol is used to indicate output redirection. It tells the shell to take the modified text resulting from the sed operation and save it to a new file named "q2.txt." If "q2.txt" does not exist, it will be created. If it already exists, its contents will be overwritten with the modified text.
 
 In summary, this command reads the contents of the "q1.txt" file, performs a global text substitution, replacing all occurrences of "Ring" with "Sword," and then saves the modified text to a new file named "q2.txt." The original "q1.txt" remains unchanged, and "q2.txt" contains the modified text.
-====================================================================================
+
+=================================================
 
 
 11. What are the results of the diff commands in the sequence below?
+
+```
 $ cat > f1.txt
 I don’t know half of you
 half as well as I should like;
 and I like less than half of you
 half as well as you deserve
 ^D
-$ sed ’s/half/two\ thirds/g’ < f1.txt > f2.txt (stream editor) (seach for half and replace  two thirds and dump to file f2)
-$ diff f1.txt f2.txt (look for differences line by line) s - search  g- globally
-$ sed ’s/like/do\ not\ like/g’ < f1.txt > f2.txt (look for like, replace do not like and dump to f2)
-$ diff f1.txt f2.txt (look for differences line by line in file)
-R: Replaces words found in file line by line and dump to new files,
-diff seacrhc for diferences line by line in file
 
-More details:
+$ sed ’s/half/two\ thirds/g’ < f1.txt > f2.txt (stream editor) (seach for half and replace  two thirds and dump to file f2)
+````
+
+```
+$ diff f1.txt f2.txt (look for differences line by line) s - search  g- globally
+
+$ sed ’s/like/do\ not\ like/g’ < f1.txt > f2.txt (look for like, replace do not like and dump to f2)
+
+$ diff f1.txt f2.txt (look for differences line by line in file)
+
+```
+**Response:**
+
+Replaces words found in file line by line and dump to new files, diff seacrhc for diferences line by line in file
+
+**More details:**
+
 The command uses the sed (stream editor) utility to perform text substitution in a file named "f1.txt" and save the modified text in a new file named "f2.txt." Here's a breakdown of the command:
 
 sed: This is the sed command, which is a powerful text stream editor in Unix/Linux. It allows you to perform various text transformations on an input stream (or file) and then redirect the modified text to an output stream (or file).
@@ -260,10 +365,13 @@ g: This stands for "global," and it's a flag that tells sed to perform the subst
 > f2.txt: The > symbol is used to indicate output redirection. It tells sed to write the modified text to the "f2.txt" file. If "f2.txt" does not exist, it will be created. If it already exists, its contents will be overwritten with the modified text.
 
 In summary, the sed command takes the contents of "f1.txt," performs a global text substitution, replacing all occurrences of "half" with "two thirds," and then saves the modified text to "f2.txt." The original "f1.txt" remains unchanged, and "f2.txt" contains the modified text.
-====================================================================================
+
+================================================
 
 
 12. What is the output of the last two commands in this sequence? Explain why.
+
+```
 $ cat > numbers1.txt
 66
 43
@@ -271,6 +379,7 @@ $ cat > numbers1.txt
 22
 91
 ^D
+
 $ cat > words1.txt
 Rivendell
 Gondolin
@@ -279,19 +388,31 @@ Angband
 Gondor
 Moria
 Shire
+
 $ sort -n < numbers1.txt > numbers2.txt (numeric sort)
 $ sort -d < words.txt > words2.txt (dictionary sort)
-R: Will order the numbers and sentences in increeasing order or dictionary order and redirect to new file
-====================================================================================
+````
+
+**Response:**
+
+Will order the numbers and sentences in increeasing order or dictionary order and redirect to new file
+
+==================================================
 
 13. The following command allows you to calculate, with a good approximation, something
 about the processes currently being managed by the operating system. What?
+```
 $ ps -A | wc -l (Display info all user process | word count each file written on stdout) 
-R: shows info user process, and count number of lines the output give (wc -l) on stdout
-====================================================================================
+```
+**Response:** 
+shows info user process, and count number of lines the output give (wc -l) on stdout
+
+===============================================
 
 
 14. What is the result of the last command in this sequence? Explain why.
+
+```
 $ emacs &
 $ emacs &
 $ emacs &
@@ -301,9 +422,14 @@ $ ps -A | grep emacs
 3579 ttys001 0:00.02 /usr/local/bin/emacs
 3583 ttys001 0:00.00 grep emacs
 $ kill -9 3577 3578 3579
-R: With & lauch process and frees shell command, ps -A | grep emacs lists all process info and filters by those  with name emacs (grep emacs)
+````
 
-Kill -9 sigkill the listed processes
+**Response:** 
+
+With & lauch process and frees shell command, ps -A | grep emacs lists all process info and filters by those  with name emacs (grep emacs)
+
+```
+Kill -9 pid (sigkill the listed processes)
 
 10023 ttys002    0:00.10 emacs
 10024 ttys002    0:00.01 emacs
@@ -316,4 +442,5 @@ Kill -9 sigkill the listed processes
 [16]-  Killed: 9               emacs
 [17]+  Killed: 9               emacs
 (base) HSO:ficha_00 hso$ 
-====================================================================================
+```
+=============================================
