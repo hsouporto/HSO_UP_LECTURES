@@ -10,6 +10,7 @@
 // STATUS: TESTED
 
 int cp(const char *src_filename, const char *dest_filename){
+
     // open both files with second + 
     FILE *fpsrc = fopen(src_filename, "r");
     FILE *fpdest = fopen(dest_filename, "w+"); // create if not exist

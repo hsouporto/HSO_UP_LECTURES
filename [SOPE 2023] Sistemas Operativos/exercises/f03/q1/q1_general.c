@@ -5,8 +5,20 @@
 #define MAX_STR_SIZE 64
 
 int main(int argc, char* argv[]) {
+    
+    
+
+    //char* p1 = (char*)malloc(strlen(argv[1]) * sizeof(char));
+    //char* p2 = (char*)malloc(strlen(argv[2]) * sizeof(char));
+
+
+
+    
     char* p1 = (char*)malloc(MAX_STR_SIZE * sizeof(char));
     char* p2 = (char*)malloc(MAX_STR_SIZE * sizeof(char));
+
+
+
     int result = strcmp(argv[1], argv[2]);
 
     if (result == 0)

@@ -23,12 +23,14 @@ int main(int argc, char* argv[]) {
     char buffer[BUFFER_SIZE];
     int bytesin;
 
+
+
     for (int i=1; i <argc; i++){
         /* check if file can be opened and is readable */
         int fd = open(argv[i], O_RDONLY);
             if (fd == -1) {
                 printf("error: cannot open %s\n", argv[i]);
-                break;
+                continue;
             }
 
         /* print the contents in blocks */
