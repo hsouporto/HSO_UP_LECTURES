@@ -58,14 +58,6 @@ int main(int argc, char* argv[]) {
         // more advanced stuff to be shown
         print_permissions_advanced(info);
 
-
-
-   
-
-
-
-
-
         
     }
 
