@@ -1,0 +1,324 @@
+The Project Gutenberg EBook of Project Gutenberg (1971-2008), by Marie Lebert
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+** This is a COPYRIGHTED Project Gutenberg eBook, Details Below **
+**     Please follow the copyright guidelines in this file.     **
+
+Title: Project Gutenberg (1971-2008)
+
+Author: Marie Lebert
+
+Release Date: October 26, 2008 [EBook #27045]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK PROJECT GUTENBERG (1971-2008) ***
+
+
+
+
+Produced by Al Haines
+
+
+
+
+
+
+
+
+
+PROJECT GUTENBERG (1971-2008)
+
+
+MARIE LEBERT
+
+
+NEF, University of Toronto & Project Gutenberg, 2008
+
+Copyright (C) 2008 Marie Lebert
+
+This long article is dated May 2008. With many thanks to the great people who
+helped me, especially Michael Hart, founder of Project Gutenberg, and Russon
+Wooldridge, founder of NEF. All the mistakes are mine - my mother tongue is not
+English, but French. This article is also available in French: Le Projet
+Gutenberg (1971-2008).
+
+
+TABLE
+
+
+1. Overview
+
+2. A Bet Since 1971
+
+3. The Method
+
+4. Shared Proofreading
+
+5. Becoming Multingual
+
+6. Public Domain vs. Copyright
+
+7. From the Past to the Future
+
+8. Chronology
+
+9. Stats
+
+10. Links
+
+
+1. OVERVIEW
+
+
+August 1997: 1,000 books; April 2002: 5,000 books; October 2003: 10,000 books;
+January 2005: 15,000 books; December 2006: 20,000 books; April 2008: 25,000
+books.
+
+In July 1971, Michael Hart created Project Gutenberg with the goal of making
+available for free, and electronically, literary works belonging to public
+domain. A pioneer site in a number of ways, Project Gutenberg was the first
+information provider on the internet and is the oldest digital library. When the
+internet became popular, in the mid-1990s, the project got a boost and an
+international dimension. The number of electronic books rose from 1,000 (in
+August 1997) to 5,000 (in April 2002), 10,000 (in October 2003), 15,000 (in
+January 2005), 20,000 (in December 2006) and 25,000 (in April 2008), with a
+current production rate of around 340 new books each month. With 55 languages
+and 40 mirror sites around the world, books are being downloaded by the tens of
+thousands every day. Project Gutenberg promotes digitization in "text format",
+meaning that a book can be copied, indexed, searched, analyzed and compared with
+other books. Contrary to other formats, the files are accessible for
+low-bandwidth use. The main source of new Project Gutenberg eBooks is
+Distributed Proofreaders, launched in October 2000 by Charles Franks to help in
+the digitizing of books from public domain.
+
+
+2. A BET SINCE 1971
+
+
+= In a Few Words
+
+If the print book is 5 centuries and a half old, the electronic book is only 37
+years old. It is born with Project Gutenberg, created by Michael Hart in July
+1971 to make available for free electronic versions of literary books belonging
+to public domain. A pioneer site in a number of ways, Project Gutenberg was the
+first information provider on an embryonic internet and is the oldest digital
+library. Long considered by its critics as impossible on a large scale, Project
+Gutenberg counted 25,000 books in April 2008, with tens of thousands downloads
+daily. To this day, nobody has done a better job of putting the world's
+literature at everyone's disposal. And to create a vast network of volunteers
+all over the world, without wasting people's skills or energy.
+
+During the fist twenty years, Michael Hart himself keyed in the first hundred
+books, with the occasional help of others from time to time. When the internet
+became popular, in the mid-1990s, the project got a boost and an international
+dimension. Michael still typed and scanned in books, but now coordinated the
+work of dozens and then hundreds of volunteers in many countries. The number of
+electronic books rose from 1,000 (in August 1997) to 2,000 (in May 1999), 3,000
+(in December 2000) and 4,000 (in October 2001).
+
+37 years after its birth, Project Gutenberg is running at full capacity. It had
+5,000 books online in April 2002, 10,000 books in October 2003, 15,000 books in
+January 2005, 20,000 books  in December 2006 and 25,000 books in April 2008,
+with 340 new books available per month, 40 mirror sites in a number of
+countries, books downloaded by the tens of thousands every day, and tens of
+thousands of volunteers in various teams.
+
+Whether they were digitized 30 years ago or they are digitized now, all the
+books are captured in Plain Vanilla ASCII (the original 7-bit ASCII), with the
+same formatting rules, so they can be read easily by any machine, operating
+system or software, including on a PDA, a cell phone or an eBook reader. Any
+individual or organization is free to convert them to different formats, without
+any restriction except respect for copyright laws in the country involved.
+
+In January 2004, Project Gutenberg had spread across the Atlantic with the
+creation of Project Gutenberg Europe. On top of its original mission, it also
+became a bridge between languages and cultures, with a number of national and
+linguistic sections. While adhering to the same principle: books for all and for
+free, through electronic versions that can be used and reproduced indefinitely.
+And, as a second step, the digitization of images and sound, in the same spirit.
+
+= Beginning and Persevering
+
+Let us get back to the beginnings of the project. When he was a student at the
+University of Illinois (USA), Michael Hart was given $100,000,000 of computer
+time at the Materials Research Lab of his university. On July 4, 1971, on
+Independence Day, Michael keyed in The United States Declaration of Independence
+(signed on July 4, 1776) to the mainframe he was using. In upper case, because
+there was no lower case yet. But to send a 5 K file to the 100 users of the
+embryonic internet would have crashed the network. So Michael mentioned where
+the eText was stored (though without a hypertext link, because the web was still
+20 years ahead). It was downloaded by six users. Project Gutenberg was born.
+
+Michael decided to use this huge amount of computer time to search the public
+domain books that were stored in our libraries, and to digitize these books. He
+also decided to store the electronic texts (eTexts) in the simplest way, using
+the plain text format called Plain Vanilla ASCII, so they can be read easily by
+any machine, operating system or software. A book would become a continuous text
+file instead of a set of pages, with caps for the terms in italic, bold or
+underlined of the print version.
+
+Soon afterwards he defined Project Gutenberg's mission: to put at everyone's
+disposal, in electronic versions, as many literary works of the public domain as
+possible for free. As he stated years later, in August 1998, "We consider eText
+to be a new medium, with no real relationship to paper, other than presenting
+the same material, but I don't see how paper can possibly compete once people
+each find their own comfortable way to eTexts, especially in schools."
+
+After he keyed in The United States Declaration of Independence in 1971, Michael
+went on in 1972 and typed in a longer text, The United States Bill of Rights,
+that includes the ten first amendments added in 1789 to the Constitution (dated
+1787) and defining the individual rights of the citizens and the distinct powers
+ot the Federal Government and the States. In 1973, Michael typed in the full
+text of The United States Constitution.
+
+From one year to the next, disk space was getting larger, by the standards of
+the time (there was no hard disk yet), so it was possible to plan bigger files.
+Michael began typing in the Bible, because the individual books of the Bible
+could be processed separately as different files. He also worked on the
+collected works of Shakespeare, with one play at a time, and a file for each
+play. That edition of Shakespeare was never released, due to copyright changes.
+If Shakespeare's works belong to the public domain, the comments and notes may
+be copyrighted, depending on the publication date. But other editions belonging
+to the public domain were posted a few years later.
+
+In parallel, the internet, which was still embryonic in 1971, was born in 1974
+with the creation of TCP/IP (Transmission Control Protocol / Internet Protocol)
+by Vinton Cerf and Bob Kahn. Its rapid expansion started in 1983.
+
+= 10 to 10,000 Books
+
+In August 1989, Project Gutenberg completed its 10th book, The King James Bible,
+that was first published in 1611, with the standard text dated 1769. In 1990,
+there were 250,000 internet users, and the standard was 360 K disks. In January
+1991, Michael typed in Alice's Adventures in Wonderland, by Lewis Carroll
+(published in 1865). In July 1991, he typed in Peter Pan, by James M. Barrie
+(published in 1904). These two worldwide classics of childhood literature each
+fitted on one disk.
+
+1991 was also the year the web became operational. The first browser, Mosaic,
+was released in November 1993. As the web was becoming a popular medium, it
+became easier to circulate eTexts and recruit volunteers. Project Gutenberg
+gradually got into its stride, with the digitization of one book per month in
+1991, two books per month in 1992, four books per month in 1993 and eight books
+per month in 1994. In January 1994, Project Gutenberg celebrated its 100th book
+by releasing The Complete Works of William Shakespeare. Shakespeare wrote most
+of his work between 1590 and 1613. The steady growth went on, with an average of
+8 books per month in 1994, 16 books per month in 1995, and 32 books per month in
+1996.
+
+As we can see, from 1991 to 1996, the "output" doubled every year. While
+continuing to digitize books, Michael was also coordinating the work of dozens
+of volunteers. At the end of 1993, Project Gutenberg's eTexts were organized
+into three main sections: a) "Light Literature", such as Alice's Adventures in
+Wonderland, Peter Pan or Aesop's Fables; b) "Heavy Literature", such as the
+Bible, Shakespeare's works or Moby Dick; c) "Reference Literature", such as
+Roget's Thesaurus, and a set of encyclopaedias and dictionaries. This
+organization in three sections was abandoned later for a more detailed
+classification.
+
+Project Gutenberg's goal is to be "universal" both for the literary works that
+are chosen and the audience who reads them. The goal is to put literature at
+everyone's disposal. With a focus on books that many people would use
+frequently, and not only students and teachers. For example, the "Light
+Literature" section is intended for pre-schoolers as well as their grandparents.
+The aim is that they will want to look up the eText of Peter Pan when they come
+back from watching Hook at the movies. Or that they will read the eText of
+Alice's Adventures in Wonderland after seeing it on TV. Or that they will look
+for the context of a quotation after hearing it in one of the Star Trek
+episodes; nearly every episode of Star Trek quotes from books which are in the
+Project Gutenberg collections.
+
+The idea is that, whether they were avid readers of print books or not in the
+past, people should easily be able to look up quotations they hear in
+conversations, movies, music, or they read in books, newspapers and magazines,
+within a library containing all these quotations in an easy-to-use format.
+eTexts don't take up much space in ASCII format. They can be easily downloaded
+with a standard phone line. Searching a word or a phrase is simple too. People
+can easily search an entire eText by using the plain "search" menu available in
+any program.
+
+In 1997, the "output" was still an average of 32 books per month. In June 1997,
+Project Gutenberg released The Merry Adventures of Robin Hood, by Howard Pyle
+(published in 1883). In August 1997, it released its 1000th book, La Divina
+Commedia di Dante (published in 1321), in Italian, its original language.
+
+In August 1998, Michael wrote: "My own personal goal is to put 10,000 eTexts on
+the Net [editor's note: his goal was reached in October 2003] and if I can get
+some major support, I would like to expand that to 1,000,000 and to also expand
+our potential audience for the average eText from 1.x% of the world population
+to over 10%, thus changing our goal from giving away 1,000,000,000,000 eTexts to
+1,000 times as many, a trillion and a quadrillion in US terminology."
+
+= 1,000 to 10,000 Books
+
+From 1998 to 2000, there was a steadfast average of 36 new books per month. In
+May 1999, there were 2,000 books. The 2000th book was Don Quijote, by Cervantes
+(published in 1605), in Spanish, its original language.
+
+Released in December 2000, the 3000th book was the third volume of A l'ombre des
+jeunes filles en fleurs (In the Shadow of Young Girls in Flower), by Marcel
+Proust (published in 1919), in French, its original language. Around 104 books
+per month were released in 2001.
+
+Released in October 2001, the 4000th book was The French Immortals Series, in
+English. Published in 1905 by Maison Mazarin, Paris, this book is an anthology
+of short fictions by authors belonging to the renowned French Academy (Academie
+francaise), notably Emile Souvestre, Pierre Loti, Hector Malot, Charles de
+Bernard and Alphonse Daudet.
+
+Available in April 2002, the 5000th book was The Notebooks of Leonardo da Vinci,
+which he wrote at the beginning of the 16th century. A text that is steadily in
+the Top 100 of downloaded texts.
+
+In 1988, Michael Hart chose to digitize Alice's Adventures in Wonderland and
+Peter Pan because they each fitted on one 360 K disk, the standard of the time.
+Fifteen years later, in 2002, 1.44 M is the standard disk and ZIP is the
+standard compression. The practical file size is about 3 million characters,
+more than long enough for the average book. The digitized ASCII version of a
+300-page novel is 1 M. A bulky book can fit in two ASCII files, that can be
+downloaded as is or in ZIP format.
+
+An average of 50 hours is necessary to get an eText selected, copyright-cleared,
+scanned, proofread, formatted and assembled.
+
+A few numbers are reserved for "special" books. For example, eBook number 1984
+is reserved for George Orwell's classic, published in 1949, and still a long way
+from falling into the public domain.
+
+In 2002, around 100 books were released per month. In Spring 2002, Project
+Gutenberg's books represented 1/4 of all the public domain works freely
+available on the web and listed nearly exhaustively by the Internet Public
+Library (IPL). An impressive result thanks to the relentless work of thousands
+of volunteers in several countries.
+
+1,000 books in August 1997, 2,000 books in May 1999, 3,000 books in December
+2000, 4,000 books in October 2001, 5,000 books in April 2002, 10,000 books in
+October 2003. eBook number 10000 is The Magna Carta, the first English
+constitutional text, signed in 1215. From April 2002 to October 2003, in 18
+months, the number of books doubled, going from 5,000 to 10,000, with a monthly
+average of 300 new digitized books.
+
+10,000 books. An impressive number if we think about all the scanned and
+proofread pages this number represents. A fast growth thanks to Distributed
+Proofreaders, a website launched in October 2000 by Charles Franks to share the
+proofreading of books between many volunteers. Volunteers choose one of the
+books listed on the site and proofread a given page. They don't have any quota
+to fulfill, but it is recommended they do a page per day if possible. It doesn't
+seem much, but with hundreds of volunteers it really adds up.
+
+Books are also copied on CDs and DVDs. Blank CDs and DVDs cost next to nothing,
+as does their burning on a CD or DVD writer. Project Gutenberg sends a free CD
+or DVD to anyone who asks for it, and people are encouraged to make copies for a
+friend, a library or a school. Released in August 2003, the "Best of Gutenberg"
+CD contained over 600 books, as a follow-up to other CDs in the past). The first
+Project Gutenberg DVD was released in December 2003 to celebrate the landmark of
+10,000 books, with most of the existing titles (9,400 books).
+
+= 10,000 to 20,000 Books
