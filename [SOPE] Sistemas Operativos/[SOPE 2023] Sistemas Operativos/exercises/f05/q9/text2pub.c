@@ -25,14 +25,15 @@ int main(int argc, char* argv[]) {
     // now each process lauch its own version
     for (int i = 1; i < argc; i++){
 
-        char buffer[100];
-        strcpy(buffer, argv[i]);            // safe copy maintain original
-        printf("ori: %s\n", argv[i]);
 
-        char *file_dest = strtok(buffer, ".");
-        strcat(file_dest, ".epub");
-        printf("dest: %s\n", file_dest);
-        printf("ori: %s\n", argv[i]);
+        char buffer[100];
+        strcpy(buffer, argv[i]);
+        char *dest = strtok(buffer, ".");
+        char *dest_pointer = malloc(strlen(dest)+10);
+        strcpy(dest_pointer, dest);
+        strcat(dest_pointer,".epub");
+
+    
 
         // try to fork
         if ((pid = fork()) < 0){
@@ -47,7 +48,7 @@ int main(int argc, char* argv[]) {
             printf("[Pid %d] Converting file %s... \n",getpid(), argv[i]);
 
             // evoque the comamnd
-            if (execlp("pandoc", "pandoc", argv[i], "-o",  file_dest, (char *)NULL)) {
+            if (execlp("pandoc", "pandoc", argv[i], "-o",  dest_pointer, (char *)NULL)) {
                
                 fprintf(stderr, "Failed to exec '%s': %s\n", "exec", strerror(errno));
                 return EXIT_FAILURE;
