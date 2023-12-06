@@ -49,8 +49,6 @@ int run_cmd(char **args){
         exit(EXIT_FAILURE);
     }
 
-    exit(EXIT_FAILURE);
-
 }
 
 

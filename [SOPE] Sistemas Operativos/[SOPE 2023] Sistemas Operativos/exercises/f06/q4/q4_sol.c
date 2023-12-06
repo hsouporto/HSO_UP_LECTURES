@@ -1,119 +1,70 @@
-#include <sys/wait.h>
-#include <sys/socket.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <errno.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <ctype.h> 
+#include <unistd.h>
 
-// STATUS: FINISH FINAL BLOCK ON RECEIVE
-// NOTES: THE Reading operation by default is blocking, however we can define a timout to release from read operation
+// STATUS: TESTED
 
-#define BUFFERSIZE 1024
-
-#define CHANNEL0 0
-#define CHANNEL1 1
+static void handler_usr1()  { printf("received SIGUSR1\n"); }
+static void handler_usr2()  { printf("received SIGUSR2\n"); }
+static void handler_hup()   { printf("received SIGHUP\n"); }
+static void handler_stp()   { printf("received SIGSTP\n"); }
+static void handler_INT()   { printf("received SIGINT\n"); }
+static void handler_KILL()   { printf("received SIGKILL\n"); }
 
 
 
 
 int main(int argc, char *argv[]){
-    int sockets[2];
-    char buffer[BUFFERSIZE];
-    pid_t pid;
+    printf("My PID is %d\n", getpid());
 
-    // LINUX TIMOUT RECEIVE (CHECK)
-    struct timeval tv;
-    tv.tv_sec = 3;
-    tv.tv_usec = 0;
-    //setsockopt(sockets, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv);
-
-    // create a pair of connected sockets
-    if (socketpair(AF_UNIX, SOCK_STREAM, 0, sockets) < 0){
-        perror("opening stream socket pair");
-        exit(1);
+    if (signal(SIGUSR1, handler_usr1) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGUSR1: %s", strerror(errno));
+        exit(EXIT_FAILURE);
     }
 
-    // try to fork
-    if ((pid = fork()) < 0){
-        perror("fork");
-        return EXIT_FAILURE;
+    if (signal(SIGUSR2, handler_usr2) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGUSR2: %s", strerror(errno));
+        exit(EXIT_FAILURE);
     }
-    else if (pid == 0){
-        /* this is the child */
-        close(sockets[CHANNEL0]);       // close the socked 
-        int n_bytesread=0;
-       
-        // try to read something from socket (blocking)
-        while ((n_bytesread= read(sockets[CHANNEL1], buffer, sizeof(buffer))) > 0){
-            write(STDOUT_FILENO, buffer, n_bytesread); // write to STDOUT
 
-            // convert and send it back
-            for (int i=0; i < n_bytesread; i++) buffer[i] = toupper(buffer[i]);
-
-            if (write(sockets[CHANNEL1], buffer, strlen(buffer)) < 0)
-            perror("writing stream message");
-
-        }
-            
-        // we completed our round
-        close(sockets[CHANNEL1]);
-
-        /* leave gracefully */
-        return EXIT_SUCCESS;
-
+    if (signal(SIGHUP, handler_hup) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGHUP: %s", strerror(errno));
+        exit(EXIT_FAILURE);
     }
-    else{
-        /* this is the parent */
-        close(sockets[CHANNEL1]);
 
-        // try to read file
-        printf("File to opened %s\n", argv[1]);
-        
-        int fd_file = open(argv[1], O_RDONLY);
-        if (fd_file == -1){
-            printf("Error reading file\n\r");
-            close(sockets[CHANNEL1]);
-            return EXIT_FAILURE;
-        }
-
-        
-        // read the file and send
-        int n_bytesread; 
-        while ((n_bytesread = read(fd_file, buffer, BUFFERSIZE)) > 0){
-            // try to write the block to socket (blocking)
-            if (write(sockets[CHANNEL0], buffer, n_bytesread) < 0){
-
-                // if we have an error proceed accordinly
-                fprintf(stderr, "Unable to write to socket: %s\n", strerror(errno));
-                close(sockets[CHANNEL1]);
-                close(fd_file);
-                return EXIT_FAILURE;
-            }
-        }
-
-        // now receive it
-        printf("Trying to Receive Back (Parent)\n");
-        while ((n_bytesread = read(sockets[CHANNEL0], buffer, sizeof(buffer))) > 0) {
-            printf("Received back (Parent): \n");
-            // dump it to stdout
-            write(STDOUT_FILENO, buffer, n_bytesread); // write to STDOUT
-        }
-
-        // close channel
-        close(sockets[CHANNEL0]);
-
-        /* wait for child and exit */
-        if (waitpid(pid, NULL, 0) < 0){
-            perror("did not catch child exiting");
-            return EXIT_FAILURE;
-        }
-        
-        return EXIT_SUCCESS;
+    if (signal(SIGTSTP, handler_stp) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGSTP: %s", strerror(errno));
+        exit(EXIT_FAILURE);
     }
+
+    if (signal(SIGINT, handler_INT) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGINT: %s", strerror(errno));
+        exit(EXIT_FAILURE);
+    }
+
+    if (signal(SIGKILL, handler_KILL) == SIG_ERR){
+        fprintf(stderr, "Can’t catch SIGKILL: %s", strerror(errno));
+        exit(EXIT_FAILURE);
+    }
+
+    /* stick around ... */
+    for (;;)
+        pause();
 }
+
+/* BRIEF EXPLAINATION
+
+* Here we are capturiing the signals and rediect to the proper handler
+
+To replicate open a new shell and issue:
+
+$ kill -USR1 PID
+$ kill -USR2 PID
+$ kill -HUP PID
+
+You cannot SIGKILL, at least not for the process being killed.
+
+*/
