@@ -1,105 +1,95 @@
-#include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
 #include <unistd.h>
 
-// STATUS: TESTED
+#define MAX_COMMAND_LENGTH 100
+#define MAX_HISTORY_SIZE 10
 
-#define BUFFERSIZE 128
+char* history[MAX_HISTORY_SIZE];
+int historyCount = 0;
 
-// save the evoqued command and arguments to file
-int append_file(char *args, char *filename){
+void executeCommand(char *command) {
+    // Fork a child process
+    pid_t pid = fork();
 
-    // open with append
-    FILE *fd_file = fopen(filename, "a+");
-    if(fd_file == NULL){
-        perror("Error opening file.");
-        return EXIT_FAILURE;
-    }
+    if (pid == -1) {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    } else if (pid == 0) {
+        // Child process
+        char *token;
+        char *args[MAX_COMMAND_LENGTH];
+        int argCount = 0;
 
-    // print to the file
-    fprintf(fd_file, "%s", args);
-
-    // save to file
-    fclose(fd_file);
-    return EXIT_SUCCESS;
-
-}
-
-char **parse_string(char *cmd_string){
-
-    char **res = NULL;
-    char *p = strtok(cmd_string, " ");
-    int n_spaces = 0, i;
-
-    /* split string and append tokens to 'res' */
-    while (p){
-        res = realloc(res, sizeof(char *) * ++n_spaces);
-
-        if (res == NULL)
-            exit(-1); /* memory allocation failed */
-
-        res[n_spaces - 1] = p;
-
-        p = strtok(NULL, " ");
-    }
-
-    /* realloc one extra element for the last NULL */
-    res = realloc(res, sizeof(char *) * (n_spaces + 1));
-    res[n_spaces] = 0;
-
-    /* print the result for Debug */
-    for (i = 0; i < (n_spaces + 1); ++i)
-        printf("res[%d] = %s\n", i, res[i]);
-
-    return res;
-}
-
-
-int main(int argc, char *argv[]){
-    char buf[1024];
-    char *command;
-    pid_t pid;
-
-    /* do this until you get a ^C or a ^D */
-    for (;;){
-        /* give prompt, read command and null terminate it */
-        fprintf(stdout, "$ ");
-
-        // fetch the comand
-        if ((command = fgets(buf, sizeof(buf), stdin)) == NULL)
-            break;
-
-        command[strlen(buf) - 1] = '\0';
-
-        /* call fork and check return value */
-        if ((pid = fork()) == -1){
-            fprintf(stderr, "%s: can't fork command: %s\n", argv[0], strerror(errno));
-            continue;
+        // Tokenize the command string
+        token = strtok(command, " ");
+        while (token != NULL) {
+            args[argCount++] = token;
+            token = strtok(NULL, " ");
         }
-        else if (pid == 0){ // child
-            
-            // parser the command string
-            char ** args = parse_string(command);
 
-            append_file(command, "cmd_history.txt" );
-            // ivoque te program
-            execvp(command, args);
+        // Null-terminate the argument list
+        args[argCount] = NULL;
 
-            /* if I get here "execlp" failed */
-            fprintf(stderr, "%s: couldn't exec %s: %s\n", argv[0], buf, strerror(errno));
+        // Execute the command
+        execvp(args[0], args);
 
-            /* terminate with error to be caught by parent */
-            exit(EXIT_FAILURE);
+        // execvp only returns if there is an error
+        perror("execvp");
+        exit(EXIT_FAILURE);
+    } else {
+        // Parent process
+        // Wait for the child to complete
+        wait(NULL);
+
+        // Store the command in history
+        if (historyCount < MAX_HISTORY_SIZE) {
+            history[historyCount] = strdup(command);
+            historyCount++;
+        } else {
+            // Shift the history to make space for the new command
+            free(history[0]);
+            for (int i = 0; i < MAX_HISTORY_SIZE - 1; i++) {
+                history[i] = history[i + 1];
+            }
+            history[MAX_HISTORY_SIZE - 1] = strdup(command);
         }
-        /* shell waits for command to finish before giving prompt again */
-        if ((pid = waitpid(pid, NULL, 0)) < 0)
-            fprintf(stderr, "%s: waitpid error: %s\n", argv[0], strerror(errno));
     }
-    exit(EXIT_SUCCESS);
 }
 
+void printHistory(int n) {
+    if (n > historyCount) {
+        n = historyCount;
+    }
 
+    for (int i = historyCount - n; i < historyCount; i++) {
+        printf("%s\n", history[i]);
+    }
+}
 
+int main() {
+    char input[MAX_COMMAND_LENGTH];
+
+    while (1) {
+        printf("myshell> ");
+        fgets(input, sizeof(input), stdin);
+
+        // Remove the newline character from input
+        input[strcspn(input, "\n")] = '\0';
+
+        if (strcmp(input, "myhistory") == 0) {
+            // Special command to print history
+            int n;
+            printf("Enter the number of commands to display: ");
+            scanf("%d", &n);
+            getchar(); // Consume the newline character left by scanf
+            printHistory(n);
+        } else {
+            // Execute the command
+            executeCommand(input);
+        }
+    }
+
+    return 0;
+}

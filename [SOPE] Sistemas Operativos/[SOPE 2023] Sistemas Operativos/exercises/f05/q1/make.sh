@@ -1,1 +1,0 @@
-gcc -Wall q1.c -0 q1

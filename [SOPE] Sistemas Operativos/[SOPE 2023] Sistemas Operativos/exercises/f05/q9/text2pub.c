@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
         if(pid==0){
             //printf("dest: %s\n", file_dest);
             //printf("ori: %s\n", argv[i]);
-            printf("[Pid %d] Converting file %s... \n",getpid(), argv[i]);
+            printf("[Pid %d] Converting file %s... \n", getpid(), argv[i]);
 
             // evoque the comamnd
             if (execlp("pandoc", "pandoc", argv[i], "-o",  dest_pointer, (char *)NULL)) {
