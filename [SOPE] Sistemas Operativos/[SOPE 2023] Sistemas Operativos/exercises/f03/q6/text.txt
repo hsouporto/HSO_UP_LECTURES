@@ -1,1 +1,2 @@
-hello hugo, all ok qith you, how are things?, hope all ok
+Hello,
+this is a test, this file has 20 characters
