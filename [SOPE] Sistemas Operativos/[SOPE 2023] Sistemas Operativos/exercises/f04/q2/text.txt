@@ -1,1 +1,2 @@
-this files has some properties
+This is a test files
+hello
