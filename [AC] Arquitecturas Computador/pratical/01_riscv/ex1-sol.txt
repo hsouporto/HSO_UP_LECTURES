@@ -1,0 +1,8 @@
+Ex1.
+a) 20
+b) 19
+c) 0x10010008
+d) 0x00400030
+e) 3
+f) 58
+g) A sub-rotina calcula a soma dos elementos da sequência.		
