@@ -17,16 +17,23 @@ resultado: .float 0
 .globl main
 main:
     # Carrega as variáveis A, B, C e D nos registradores f0, f1, f2 e f3, respectivamente
-    flw f0, A
-    flw f1, B
-    flw f2, C
-    flw f3, D
+    la  a0, A
+     la   a1, B
+     la   a2, C
+     la   a3, D
+    
+    flw f0, 0(a0)
+    flw f1, 0(a1)
+    flw f2, 0(a2)
+    flw f3, 0(a3)
     
     # Executa as operações matemáticas para calcular o resultado da expressão
     fsub.s f4, f0, f1   # f4 = A - B
     fmul.s f5, f4, f2   # f5 = (A - B) * C
     fadd.s f6, f0, f3   # f6 = A + D
-    fsub.s f7, f6, 3    # f7 = A + D - 3
+    li    a0, 3
+    fcvt.s.w   f1, a0
+    fsub.s f7, f6, f1    # f7 = A + D - 3
     fdiv.s f8, f5, f7   # f8 = (A - B) * C / (D + A - 3)
     
     # Armazena o valor do resultado na memória
