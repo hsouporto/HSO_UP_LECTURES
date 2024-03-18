@@ -21,6 +21,7 @@ main:
      la   a1, B
      la   a2, C
      la   a3, D
+     la   a4, resultado
     
     flw f0, 0(a0)
     flw f1, 0(a1)
@@ -37,7 +38,7 @@ main:
     fdiv.s f8, f5, f7   # f8 = (A - B) * C / (D + A - 3)
     
     # Armazena o valor do resultado na memória
-    fsw f8, resultado
+    fsw f8, 0(a4)
     
     # Encerra o programa
     li a0, 10
