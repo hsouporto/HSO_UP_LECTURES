@@ -1,0 +1,1 @@
+gcc -Wall q2.c -o q2
